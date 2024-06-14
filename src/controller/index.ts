@@ -1,7 +1,10 @@
-const { handleMessage } = require('./lib/Telegram');
-const { axiosInstance } = require('./lib/axios');
+// const { handleMessage } = require('./lib/Telegram');
+// const { axiosInstance } = require('./lib/axios');
+import { handleMessage } from './lib/Telegram';
+import { axiosInstance } from './lib/axios';
+import { Request } from 'express';
 
-export async function handler(req: any) {
+export async function handler(req: Request) {
   const { body } = req;
 
   const { token } = req.params;
@@ -13,7 +16,7 @@ export async function handler(req: any) {
   }
 }
 
-export async function handler_new_member(req: any) {
+export async function handler_new_member(req: Request) {
   const { body } = req;
 
   const { token } = req.params;
@@ -32,7 +35,7 @@ export async function handler_new_member(req: any) {
   }
 }
 
-export async function handler_room_bot(req: any) {
+export async function handler_room_bot(req: Request) {
   const { body } = req;
 
   const { token } = req.params;

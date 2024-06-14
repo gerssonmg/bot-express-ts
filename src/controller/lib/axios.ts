@@ -1,5 +1,4 @@
-const axios = require('axios');
-// import axios from 'axios';
+import axios from 'axios';
 
 const MY_TOKEN = '7249211535:AAHRMzpdnr3QToLjo4_A6uiwD7kt9LZJVfY';
 
@@ -19,8 +18,7 @@ function getAxiosInstance() {
         params,
       });
     },
-    post(method, params, token) {
-      const URL = `https://api.telegram.org/bot${token}`;
+    post(method, params) {
 
       return axios({
         method: 'post',

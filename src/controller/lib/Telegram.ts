@@ -1,4 +1,5 @@
-const { axiosInstance } = require('./axios');
+// const { axiosInstance } = require('./axios');
+import { axiosInstance } from './axios';
 
 function sendMessage(messageObj, messageText, token) {
   console.log(messageObj, messageText);
@@ -70,4 +71,4 @@ export function handleMessage(messageObj, token) {
   }
 }
 
-export function handleMessageWelCome(messageObj) {}
+// export function handleMessageWelCome(messageObj) {}
