@@ -8,6 +8,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// POSTGRESQL
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -19,3 +20,16 @@ model User {
   email     String
   createdAt DateTime @default(now())
 }
+
+// MONGODB
+// datasource db {
+//   provider = "mongodb"
+//   url      = env("DATABASE_URL")
+// }
+
+// model User {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   name      String
+//   email     String
+//   createdAt DateTime @default(now())
+// }
