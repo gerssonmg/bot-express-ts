@@ -17,18 +17,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.4.0",
     "@types/node": "^20.14.2",
-    "eslint": "^9.4.0",
     "globals": "^15.4.0",
     "prettier": "^3.3.2",
     "prisma": "^5.15.0",
     "tsup": "^8.1.0",
     "tsx": "^4.15.4",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.13.0"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
+    "typescript-eslint": "^7.13.0",
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
     "@prisma/client": "^5.15.0",
     "@sentry/node": "^8.9.2",
     "@sentry/profiling-node": "^8.9.2",
