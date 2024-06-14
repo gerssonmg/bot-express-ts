@@ -8,7 +8,7 @@ function sendMessage(messageObj, messageText, token) {
       chat_id: messageObj.chat.id,
       text: messageText,
     },
-    token
+    token,
   );
 }
 
@@ -23,7 +23,7 @@ export function handleMessage(messageObj, token) {
         return sendMessage(
           messageObj,
           '🙋🏻‍♂️🙋🏻‍♂️Hello! Welcome to the bot. Deseja acesso o canal 🏆🏆 VIP 🏆🏆 para ver os links do codigos de ouro?. Respondendo com "sim" ou "não"',
-          token
+          token,
         );
       default:
         return sendMessage(messageObj, 'Command not found', token);
@@ -40,7 +40,7 @@ export function handleMessage(messageObj, token) {
     return sendMessage(
       messageObj,
       '🏆🏆 Link do grupo VIP: https://t.me/+24j_fA5-_R1jZTMx .Bons estudos 🏆🏆',
-      token
+      token,
     );
     // return sendMessage(
     //   messageObj,
@@ -57,7 +57,7 @@ export function handleMessage(messageObj, token) {
     return sendMessage(
       messageObj,
       '☕☕ Entendi, foi um prazer conversar conversar com você. Vou ali fazer um cafe. Até mais! ☕☕',
-      token
+      token,
     );
   } else {
     return sendMessage(
@@ -65,7 +65,7 @@ export function handleMessage(messageObj, token) {
       '😪😪Não entendi seu comando:  #' +
         messageText +
         '#  . Tente novamente digitando 🔄🔄: /start',
-      token
+      token,
     );
   }
 }

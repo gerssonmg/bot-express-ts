@@ -27,7 +27,7 @@ export async function handler_new_member(req: any) {
         chat_id: messageObj.chat.id,
         text: `Seja bem-vindo(a) ao grupo, ${messageObj?.new_chat_member?.first_name}! 🚀🚀🚀`,
       },
-      token
+      token,
     );
   }
 }
@@ -61,7 +61,7 @@ export async function handler_room_bot(req: any) {
               chat_id: body.message.chat.id,
               text: `OI eu sou o ${token} 🚀🚀🚀 - ${index}`,
             },
-            token
+            token,
           );
         }
         return;
@@ -77,7 +77,7 @@ export async function handler_room_bot(req: any) {
         chat_id: messageObj.chat.id,
         text: `OI eu sou o ${token} 🚀🚀🚀`,
       },
-      token
+      token,
     );
   }
 }

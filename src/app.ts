@@ -8,7 +8,6 @@ const app = express();
 // Configuração do Sentry
 Sentry.setupExpressErrorHandler(app);
 
-
 // Middleware
 app.use(express.json());
 
@@ -17,6 +16,5 @@ app.use('', apiRoutes);
 
 // Error handling middleware
 app.use(errorHandler);
-
 
 export default app;
