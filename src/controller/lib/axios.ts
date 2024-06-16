@@ -21,15 +21,15 @@ export function apiPost(method: any, params: any, token: any) {
 
   const url = `${BASE_URL}/${method}`;
 
+  try {
+    return axios.post(url, params).catch((error) => {
+      console.log("POST ", error.message)
+    });
+  } catch (error) {
+    console.error('Erro POST:');
+    return null;
+  }
 
-  return axios.post(url, params);
-
-  // return axios({
-  //   method: 'post',
-  //   baseURL: BASE_URL,
-  //   url: `/${method}`,
-  //   params,
-  // });
 }
 
 export function apiAddUserToGroup(chat_id: any, user_id: any) {
@@ -42,7 +42,10 @@ export function apiAddUserToGroup(chat_id: any, user_id: any) {
       user_id: user_id,
     };
 
-    return axios.post(url, params);
+    return axios.post(url, params).catch((error) => {
+      console.error('Erro ao adicionar membro:', error);
+      return null;
+    })
   } catch (error) {
     console.error('Erro ao adicionar membro:', error);
     return null;

@@ -25,6 +25,25 @@ function sendMessage(messageObj: any, messageText: any, token: any) {
   );
 }
 
+export function sendMessageV2(
+  chat_id: any,
+  messageText: any,
+  reply_markup: any,
+  token: any
+) {
+  console.log("chat_id")
+  console.log(chat_id)
+  return apiPost(
+    'sendMessage',
+    {
+      chat_id: chat_id,
+      text: messageText,
+      reply_markup: reply_markup
+    },
+    token,
+  );
+}
+
 export function handleMessage(messageObj: any, token: any) {
   const messageText = messageObj.text || '';
 

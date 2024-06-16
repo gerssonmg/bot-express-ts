@@ -6,7 +6,7 @@ import {
 } from './controller/index';
 import prismaClient from './config/prismaConfig';
 import zod from 'zod';
-import { handleTelegramUpdate } from './service/webhook_first_set';
+import { getCommand, handleTelegramUpdate } from './service/webhook_first_set';
 
 const router = express.Router();
 
@@ -19,6 +19,7 @@ router.post('/v1/webhook/:token', async (req: any, res: any) => {
 
 });
 
+const TOKEN_BOT_ERLES = '7249211535:AAHRMzpdnr3QToLjo4_A6uiwD7kt9LZJVfY'
 router.post('/webhook/:token', async (req: any, res: any) => {
   console.log('FLOW');
   console.log(handleTelegramUpdate(req.body))
@@ -27,7 +28,14 @@ router.post('/webhook/:token', async (req: any, res: any) => {
   console.log('POST req.body');
   console.log(req?.body);
 
-  if (req.body?.message?.text && req.body?.message?.chat?.id > 0) {
+  if (req?.params?.token === TOKEN_BOT_ERLES) {
+    console.log("CUSTOM")
+    getCommand(req.body, TOKEN_BOT_ERLES)
+    res.send("OK")
+  }
+
+
+  else if (req.body?.message?.text && req.body?.message?.chat?.id > 0) {
     try {
       res.send(await handler(req));
     } catch (error) {
