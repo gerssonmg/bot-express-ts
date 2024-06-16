@@ -1,12 +1,25 @@
-import { apiGet } from './axios';
+import { apiPost } from './axios';
 
 function sendMessage(messageObj: any, messageText: any, token: any) {
   console.log(messageObj, messageText);
-  return apiGet(
+  return apiPost(
     'sendMessage',
     {
       chat_id: messageObj.chat.id,
       text: messageText,
+      "reply_markup": {
+        "inline_keyboard": [
+          [
+            { "text": "Botão 1", "callback_data": "botao1" }
+          ],
+          [
+            { "text": "Botão 2", "callback_data": "botao2" }
+          ],
+          [
+            { "text": "Botão 3", "callback_data": "botao3" }
+          ]
+        ]
+      }
     },
     token,
   );

@@ -17,14 +17,19 @@ export function apiGet(method: any, params: any, token: any) {
   });
 }
 
-export function apiPost(method: any, params: any) {
+export function apiPost(method: any, params: any, token: any) {
 
-  return axios({
-    method: 'post',
-    baseURL: BASE_URL,
-    url: `/${method}`,
-    params,
-  });
+  const url = `${BASE_URL}/${method}`;
+
+
+  return axios.post(url, params);
+
+  // return axios({
+  //   method: 'post',
+  //   baseURL: BASE_URL,
+  //   url: `/${method}`,
+  //   params,
+  // });
 }
 
 export function apiAddUserToGroup(chat_id: any, user_id: any) {
