@@ -6,8 +6,18 @@ import {
 } from './controller/index';
 import prismaClient from './config/prismaConfig';
 import zod from 'zod';
+import { handleTelegramUpdate } from './service/webhook_first_set';
 
 const router = express.Router();
+
+router.post('/v1/webhook/:token', async (req: any, res: any) => {
+  console.log('TOKEN');
+  console.log(req?.params);
+  console.log('POST req.body');
+  console.log(req?.body);
+  const state = handleTelegramUpdate(req.body);
+
+});
 
 router.post('/webhook/:token', async (req: any, res: any) => {
   console.log('TOKEN');
