@@ -20,6 +20,8 @@ router.post('/v1/webhook/:token', async (req: any, res: any) => {
 });
 
 router.post('/webhook/:token', async (req: any, res: any) => {
+  console.log('FLOW');
+  console.log(handleTelegramUpdate(req.body))
   console.log('TOKEN');
   console.log(req?.params);
   console.log('POST req.body');
