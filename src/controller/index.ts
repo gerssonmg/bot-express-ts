@@ -1,7 +1,5 @@
-// const { handleMessage } = require('./lib/Telegram');
-// const { axiosInstance } = require('./lib/axios');
 import { handleMessage } from './lib/Telegram';
-import { axiosInstance } from './lib/axios';
+import { apiGet } from './lib/axios';
 import { Request } from 'express';
 
 export async function handler(req: Request) {
@@ -24,7 +22,7 @@ export async function handler_new_member(req: Request) {
   console.log('AQUI');
   if (body) {
     const messageObj = req.body?.message;
-    await axiosInstance.get(
+    await apiGet(
       'sendMessage',
       {
         chat_id: messageObj.chat.id,
@@ -58,7 +56,7 @@ export async function handler_room_bot(req: Request) {
         for (let index = 0; index < iterations; index++) {
           console.log('INDEX', index, iterations, typeof iterations);
           await new Promise((resolve) => setTimeout(resolve, delay));
-          await axiosInstance.get(
+          await apiGet(
             'sendMessage',
             {
               chat_id: body.message.chat.id,
@@ -74,7 +72,7 @@ export async function handler_room_bot(req: Request) {
     }
 
     const messageObj = req.body?.message;
-    await axiosInstance.get(
+    await apiGet(
       'sendMessage',
       {
         chat_id: messageObj.chat.id,

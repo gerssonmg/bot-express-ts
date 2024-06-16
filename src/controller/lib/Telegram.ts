@@ -1,9 +1,8 @@
-// const { axiosInstance } = require('./axios');
-import { axiosInstance } from './axios';
+import { apiGet } from './axios';
 
-function sendMessage(messageObj, messageText, token) {
+function sendMessage(messageObj: any, messageText: any, token: any) {
   console.log(messageObj, messageText);
-  return axiosInstance.get(
+  return apiGet(
     'sendMessage',
     {
       chat_id: messageObj.chat.id,
@@ -13,7 +12,7 @@ function sendMessage(messageObj, messageText, token) {
   );
 }
 
-export function handleMessage(messageObj, token) {
+export function handleMessage(messageObj: any, token: any) {
   const messageText = messageObj.text || '';
 
   if (messageText.charAt(0) === '/') {
@@ -37,16 +36,11 @@ export function handleMessage(messageObj, token) {
     messageText == 'yes' ||
     messageText == 'y'
   ) {
-    // return axiosInstance.addUserToGroup(-4253594186, messageObj.chat.id);
     return sendMessage(
       messageObj,
       '🏆🏆 Link do grupo VIP: https://t.me/+24j_fA5-_R1jZTMx .Bons estudos 🏆🏆',
       token,
     );
-    // return sendMessage(
-    //   messageObj,
-    //   'Link: https://gist.github.com/gerssonmg/2912f4cc3e9d2cff68e3c38281b42c69 Não esqueça de se inscrever no meu canal: https://www.youtube.com/channel/UCNiJgzoC7f8QvzODJd4LSgA. Lembrando que em breve o conteudo vai de ouro para dimante, e precisa estar inscrivo para pegar essas joias heheeh :) . Use com moderacao e bons estudos'
-    // );
   } else if (
     messageText == 'Não' ||
     messageText == 'Nao' ||
@@ -64,11 +58,9 @@ export function handleMessage(messageObj, token) {
     return sendMessage(
       messageObj,
       '😪😪Não entendi seu comando:  #' +
-        messageText +
-        '#  . Tente novamente digitando 🔄🔄: /start',
+      messageText +
+      '#  . Tente novamente digitando 🔄🔄: /start',
       token,
     );
   }
 }
-
-// export function handleMessageWelCome(messageObj) {}
