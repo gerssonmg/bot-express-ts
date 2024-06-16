@@ -7,6 +7,7 @@ import {
 import prismaClient from './config/prismaConfig';
 import zod from 'zod';
 import { getCommand, handleTelegramUpdate } from './service/webhook_first_set';
+import { processEvent } from './hotmart/ProcessEventHotmart';
 
 const router = express.Router();
 
@@ -18,6 +19,29 @@ router.post('/v1/webhook/:token', async (req: any, res: any) => {
   const state = handleTelegramUpdate(req.body);
 
 });
+
+router.get('/hotmart/A/webhook', async (req: any, res: any) => {
+  console.log('POST req');
+  console.log(req);
+  console.log('TOKEN');
+  console.log(req?.params);
+  console.log('POST req.body');
+  console.log(req?.body);
+
+  res.send("OK-hotmart")
+})
+
+router.post('/hotmart/webhook', async (req: any, res: any) => {
+  console.log('TOKEN');
+  console.log(req?.params);
+  console.log('POST req.body');
+  console.log(req?.body);
+  await processEvent(req.body)
+  // console.log('POST req');
+  // console.log(req);
+
+  res.send("OK-hotmart")
+})
 
 const TOKEN_BOT_ERLES = '7249211535:AAHRMzpdnr3QToLjo4_A6uiwD7kt9LZJVfY'
 router.post('/webhook/:token', async (req: any, res: any) => {

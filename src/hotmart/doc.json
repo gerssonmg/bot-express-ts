@@ -1,0 +1,82 @@
+{
+    "id": "13367926-1027-4c7b-b38a-618c6b42bad8",
+    "data": {
+        "buyer": {
+            "name": "Gerson Total",
+            "email": "gersoncafilho3@gmail.com",
+            "address": {
+                "country": "Brasil",
+                "country_iso": "BR"
+            },
+            "document": "",
+            "checkout_phone": "38991085869"
+        },
+        "product": {
+            "id": 2447182,
+            "name": "Git e Github",
+            "ucode": "71115ead-b0e2-4f5e-a99a-31b567dca953",
+            "has_co_production": false
+        },
+        "producer": {
+            "name": "Gerson Crisostomo Aguiar Filho"
+        },
+        "purchase": {
+            "offer": {
+                "code": "zltgw1it"
+            },
+            "price": {
+                "value": 4.9,
+                "currency_value": "BRL"
+            },
+            "status": "BILLET_PRINTED",
+            "payment": {
+                "type": "PIX",
+                "pix_code": "00020101021226990014br.gov.bcb.pix2577pix.bpp.com.br/14796606/qrs1/v2/01zoAv75y0jjhMSzNE0ae7dh0AvIWMAVuBNRNTDuSrNAh5204000053039865802BR5907Hotmart6009SAO PAULO62070503***63042E33",
+                "pix_qrcode": "https://live-us.adyen.com/hpp/generateQRCodeImage.shtml?url=00020101021226990014br.gov.bcb.pix2577pix.bpp.com.br%2F14796606%2Fqrs1%2Fv2%2F01zoAv75y0jjhMSzNE0ae7dh0AvIWMAVuBNRNTDuSrNAh5204000053039865802BR5907Hotmart6009SAO+PAULO62070503***63042E33",
+                "installments_number": 1,
+                "pix_expiration_date": 1718728485000
+            },
+            "full_price": {
+                "value": 4.9,
+                "currency_value": "BRL"
+            },
+            "invoice_by": "HOTMART",
+            "order_bump": {
+                "is_order_bump": false
+            },
+            "order_date": 1718555684000,
+            "transaction": "HP2760125409",
+            "checkout_country": {
+                "iso": "BR",
+                "name": "Brasil"
+            },
+            "original_offer_price": {
+                "value": 4.9,
+                "currency_value": "BRL"
+            },
+            "subscription_anticipation_purchase": false
+        },
+        "affiliates": [
+            {
+                "name": "",
+                "affiliate_code": ""
+            }
+        ],
+        "commissions": [
+            {
+                "value": 0.98,
+                "source": "MARKETPLACE",
+                "currency_value": "BRL"
+            },
+            {
+                "value": 1.43,
+                "source": "PRODUCER",
+                "currency_value": "BRL"
+            }
+        ]
+    },
+    "event": "PURCHASE_BILLET_PRINTED",
+    "hottok": "eEaMuvZ3mioEEzpJH0PPHVFe9YBEhP5825287",
+    "version": "2.0.0",
+    "creation_date": 1718555689350
+}

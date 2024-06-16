@@ -21,6 +21,23 @@ model User {
   createdAt DateTime @default(now())
 }
 
+model HotmartEvent {
+  id                          Int      @id @default(autoincrement())
+  eventBody                   Json // Armazenar todo o JSON do evento
+  eventBodyId                 String // Vou remover no momento @unique
+  eventBodyEvent              String // O tipo do Evento
+  eventBodyCreationDate       DateTime
+  eventBodyVersion            String
+  eventBodySubscriberEmail    String // Vai vir nesse campo quando for CancelamentoDeAssinatura pelo que entendi
+  eventBodyBuyerCheckoutPhone String?
+  eventBodyBuyerEmail         String
+  eventBodyProductId          BigInt?
+  eventBodyProductName        String?
+  createdAt                   DateTime @default(now())
+
+  // Adicione outros campos conforme necessário
+}
+
 // MONGODB
 // datasource db {
 //   provider = "mongodb"
