@@ -34,19 +34,4 @@ model HotmartEvent {
   eventBodyProductId          BigInt?
   eventBodyProductName        String?
   createdAt                   DateTime @default(now())
-
-  // Adicione outros campos conforme necessário
 }
-
-// MONGODB
-// datasource db {
-//   provider = "mongodb"
-//   url      = env("DATABASE_URL")
-// }
-
-// model User {
-//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-//   name      String
-//   email     String
-//   createdAt DateTime @default(now())
-// }
