@@ -1,5 +1,6 @@
 import express from 'express';
 import apiRoutes from './apiRoutes';
+import apiWebhookRoutes from './webhook/hotmart';
 import { errorHandler } from './middleware/errorMiddleware';
 import * as Sentry from '@sentry/node';
 
@@ -12,9 +13,10 @@ Sentry.setupExpressErrorHandler(app);
 app.use(express.json());
 
 // Routes
+app.use('/hotmart', apiWebhookRoutes);
 app.use('', apiRoutes);
 
 // Error handling middleware
-app.use(errorHandler);
+app.use((err: any, req: any, res: any, next: any) => errorHandler(err, req, res, next));
 
 export default app;

@@ -1,9 +1,11 @@
-import { Response } from 'express';
+import { NextFunction, Response } from 'express';
 import * as Sentry from '@sentry/node';
 
 export const errorHandler = (
   err: Error,
+  req: Request,
   res: Response,
+  next: NextFunction
 ) => {
   console.error(err.stack);
 

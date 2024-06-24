@@ -1,7 +1,7 @@
 // const express = require('express');
 import app from './app';
 
-const PORT = process.env.PORT || 4040;
+const PORT = process.env.PORT || 4049;
 
 // const app = express();
 // app.use(express.json());
